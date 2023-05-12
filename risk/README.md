@@ -51,6 +51,26 @@ Given that the problem of how to efficiently deploy combat dice is solved (per t
 
 Generating a look-up table for cost-to-capture is particularly helpful for AI search approaches, since Risk is a game where the cost to get from one board position to another needs to be taken into account.
 
+Sample output:
+
+```
+$ python cost_to_capture.py 10
+0,5,10,15,20,25,30,35
+0.1944,0.4395,0.2656,0.0799,0.0172,0.003,0.0002,0.0002
+
+$ python cost_to_capture.py 50
+10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85
+0.0004,0.0029,0.0162,0.0571,0.1175,0.1772,0.1961,0.173,0.1198,0.0738,0.0391,0.0161,0.0071,0.002,0.0016,0.
+0001
+
+$ python cost_to_capture.py 500
+325,330,335,340,345,350,355,360,365,370,375,380,385,390,395,400,405,410,415,420,425,430,435,440,445,450,4
+55,460,465,470,475,480,485,490,495,500,505,510,515,520,525,530,535,540,545,550
+0.0003,0.0005,0.0005,0.0012,0.0009,0.003,0.0033,0.0046,0.0078,0.01,0.0122,0.0177,0.0219,0.0262,0.0314,0.0
+4,0.0413,0.048,0.0526,0.0547,0.0581,0.0608,0.0619,0.0584,0.061,0.0504,0.0478,0.042,0.0346,0.0339,0.0245,0
+.0232,0.0143,0.0127,0.0102,0.0097,0.0074,0.004,0.0024,0.001,0.001,0.001,0.0009,0.0004,0.0001,0.0002
+```
+
 ### Probability to Capture a Territory
 
 Finding out the odds of an attacker succeeding or failing to capture a given territory is solveable as a subset of cost-to-capture, since the number of armies available to the attacker can be taken as a cut-line. Sum up the total distribution that is less than the number of armies availble to the attacker, and that is the probability of success.
