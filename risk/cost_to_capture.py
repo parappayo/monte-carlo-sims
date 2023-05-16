@@ -12,9 +12,9 @@ def d6(count):
 def roll3v2():
     """Generate a random combat result, returns a tuple (attacker losses, defender losses)."""
     roll = random.random()
-    if roll < 0.365:
+    if roll < 0.37165637860082307:
         return (0, 2)
-    if roll < 0.66:
+    if roll < 0.37165637860082307 + 0.3357767489711934:
         return (2, 0)
     return (1, 1)
 
@@ -40,7 +40,7 @@ def costToConquer(defenderCount):
 
 
 if __name__ == '__main__':
-    trialCount = 10_000
+    trialCount = 100_000
     defenderCount = int(sys.argv[1])
     bucketSize = 5
 
