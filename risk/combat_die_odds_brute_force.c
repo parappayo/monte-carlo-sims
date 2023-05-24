@@ -1,6 +1,6 @@
 //
 //  Build:
-//      gcc roll.c -std=c99 -Wall -o roll
+//      gcc combat_die_odds_brute_force.c -std=c99 -Wall -o combat_die_odds_brute_force
 //
 
 #include <stdbool.h>
