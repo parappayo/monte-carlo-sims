@@ -2,6 +2,10 @@
 
 [Risk](https://en.wikipedia.org/wiki/Risk_(game)) is a turn-based conquest game that involves comparing rolls on six-sided dice.
 
+## TODO
+
+* Simulations having to do with leaders and fortresses
+
 ## Simulations
 
 ### Combat Die Odds
