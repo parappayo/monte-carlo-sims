@@ -20,3 +20,10 @@ class Deck:
 
 	def shuffle(self):
 		random.shuffle(self.cards)
+
+	def cards_of_type(self, cardType):
+		return [card for card in self.cards if card.type == cardType]
+
+
+def land_count(cards):
+	return len([card for card in cards if card.type == "land"])

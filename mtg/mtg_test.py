@@ -15,11 +15,11 @@ class TestDeck(unittest.TestCase):
 	def test_land_count(self):
 		deck = mtg.Deck()
 		deck.generate(60, 24)
-		lands = [card for card in deck.cards if card.type == "land"]
+		lands = deck.cards_of_type("land")
 		self.assertEqual(len(lands), 24)
 
 		deck.shuffle()
-		lands = [card for card in deck.cards if card.type == "land"]
+		lands = deck.cards_of_type("land")
 		self.assertEqual(len(lands), 24)
 
 

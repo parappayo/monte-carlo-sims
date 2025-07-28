@@ -3,13 +3,22 @@ import trials
 
 
 def evalDraw(deck: mtg.Deck, drawCount):
-	for card in deck.cards[0:drawCount]:
-		print(card.type)
+	deck.shuffle()
+	drawnCards = deck.cards[0:drawCount]
+	return mtg.land_count(drawnCards)
+
+
+def printTrials(caption, trialFunc, trialCount):
+	print(caption)
+	results = trials.run(trialFunc, trialCount)
+	trials.normalizeCounts(results, trialCount)
+	print(trials.formatToCSV(results))
 
 
 if __name__ == "__main__":
+	trialCount = 200_000
+
 	deck = mtg.Deck()
 	deck.generate(60, 24)
-	deck.shuffle()
-	evalDraw(deck, 7)
-	print(len(deck.cards))
+
+	printTrials('draw 7', lambda: evalDraw(deck, 7), trialCount)
