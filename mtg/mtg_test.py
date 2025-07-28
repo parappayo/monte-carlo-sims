@@ -12,6 +12,16 @@ class TestDeck(unittest.TestCase):
 		self.assertEqual(len(deck), 60)
 		self.assertEqual(len(deck.cards), 60)
 
+	def test_land_count(self):
+		deck = mtg.Deck()
+		deck.generate(60, 24)
+		lands = [card for card in deck.cards if card.type == "land"]
+		self.assertEqual(len(lands), 24)
+
+		deck.shuffle()
+		lands = [card for card in deck.cards if card.type == "land"]
+		self.assertEqual(len(lands), 24)
+
 
 if __name__ == "__main__":
 	unittest.main()
