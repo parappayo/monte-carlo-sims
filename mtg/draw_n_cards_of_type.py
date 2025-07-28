@@ -12,3 +12,4 @@ if __name__ == "__main__":
 	deck.generate(60, 24)
 	deck.shuffle()
 	evalDraw(deck, 7)
+	print(len(deck.cards))
