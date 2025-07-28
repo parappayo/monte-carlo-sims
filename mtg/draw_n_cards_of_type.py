@@ -21,4 +21,10 @@ if __name__ == "__main__":
 	deck = mtg.Deck()
 	deck.generate(60, 24)
 
-	printTrials('draw 7', lambda: evalDraw(deck, 7), trialCount)
+	printTrials('deck size 60, land count 24, draw 7', lambda: evalDraw(deck, 7), trialCount)
+	printTrials('deck size 60, land count 23, draw 7', lambda: evalDraw(deck, 7), trialCount)
+	printTrials('deck size 60, land count 22, draw 7', lambda: evalDraw(deck, 7), trialCount)
+	printTrials('deck size 60, land count 21, draw 7', lambda: evalDraw(deck, 7), trialCount)
+	printTrials('deck size 40, land count 18, draw 7', lambda: evalDraw(deck, 7), trialCount)
+	printTrials('deck size 40, land count 17, draw 7', lambda: evalDraw(deck, 7), trialCount)
+	printTrials('deck size 40, land count 16, draw 7', lambda: evalDraw(deck, 7), trialCount)
