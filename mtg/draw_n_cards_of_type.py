@@ -71,15 +71,15 @@ def twoColourTrials(trialCount):
 	twoColourTrial(60, 9, 10, 7)
 	twoColourTrial(60, 8, 10, 7)
 
-	singleColourTrial(40, 9, 9, 7)
-	singleColourTrial(40, 8, 10, 7)
-	singleColourTrial(40, 7, 11, 7)
-	singleColourTrial(40, 6, 12, 7)
+	twoColourTrial(40, 9, 9, 7)
+	twoColourTrial(40, 8, 10, 7)
+	twoColourTrial(40, 7, 11, 7)
+	twoColourTrial(40, 6, 12, 7)
 
-	singleColourTrial(40, 9, 8, 7)
-	singleColourTrial(40, 8, 9, 7)
-	singleColourTrial(40, 7, 10, 7)
-	singleColourTrial(40, 6, 11, 7)
+	twoColourTrial(40, 9, 8, 7)
+	twoColourTrial(40, 8, 9, 7)
+	twoColourTrial(40, 7, 10, 7)
+	twoColourTrial(40, 6, 11, 7)
 
 
 if __name__ == "__main__":
