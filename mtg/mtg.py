@@ -3,6 +3,7 @@ import random
 
 class Card:
 	def __init__(self, type):
+		# TODO: type should be a list of types for more complex MtG sims
 		self.type = type
 
 
