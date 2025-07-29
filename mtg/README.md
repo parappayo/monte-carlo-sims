@@ -14,6 +14,8 @@
 
 One of the simplest MtG scenarios is calculating the odds of drawing N "land cards" with M draws. In a typical game setup, a player's deck is 60 cards, there are 24 land cards within the deck, and the player draws 7 cards for their opening hand. A result of 2 or 3 lands drawn is desirable. Of course the same simulation can be adapted to figure how many creature cards would be drawn, how many cards of a certain mana cost, etc.
 
+A complication occurs where there are also different colour land cards (Black, White, Red, Green, and Blue) as well as multi-colour options (a Black-White land or a Red-Green land, for example.) For a desirable opening hand, a player may want at least one of each of two or more colours, in which case simply drawing three lands isn't sufficient if only one colour is represented.
+
 See also: [Binomial Coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient)
 
 Example output:
