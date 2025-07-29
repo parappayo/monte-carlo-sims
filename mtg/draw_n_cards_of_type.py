@@ -4,8 +4,7 @@ import trials
 
 def evalDraw(deck: mtg.Deck, drawCount):
 	deck.shuffle()
-	drawnCards = deck.cards[0:drawCount]
-	return mtg.count_cards_of_type(drawnCards, "land")
+	return mtg.count_cards_of_type(deck.peek_top(drawCount), "land")
 
 
 def printTrials(caption, trialFunc, trialCount):

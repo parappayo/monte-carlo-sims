@@ -22,6 +22,10 @@ class Deck:
 	def cards_of_type(self, cardType):
 		return [card for card in self.cards if card.type == cardType]
 
+	def peek_top(self, count):
+		"""Return a list of the top N cards without drawing them."""
+		return self.cards[0:count]
+
 
 def count_cards_of_type(cards, type):
 	return len([card for card in cards if card.type == type])

@@ -29,6 +29,12 @@ class TestDeck(unittest.TestCase):
 		lands = deck.cards_of_type("land")
 		self.assertEqual(len(lands), 24)
 
+	def test_peek_top(self):
+		deck = mtg.Deck()
+		deck.add_cards(60, "card")
+		topCards = deck.peek_top(7)
+		self.assertEqual(len(topCards), 7)
+
 
 if __name__ == "__main__":
 	unittest.main()
