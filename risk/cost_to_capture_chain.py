@@ -1,4 +1,5 @@
 import dice
+import trials
 
 
 def costToCapture(defenderCount):
@@ -17,7 +18,7 @@ def costToCapture(defenderCount):
 def evalCaptureChain(attackerCount, chain, i = 0):
     """Returns a tuple (territoryCapturedCount, attackerArmiesRemainingCount)"""
     if i < len(chain):
-        cost = costToCapture(chain[i])
+        cost = costToCapture(chain[i]) + 1  # note +1 here because attacker has to leave an army behind
         if attackerCount > cost:
             return evalCaptureChain(attackerCount - cost, chain, i + 1)
         return (i, 0)
@@ -25,12 +26,16 @@ def evalCaptureChain(attackerCount, chain, i = 0):
 
 
 if __name__ == '__main__':
+    trialCount = 200_000
     attackerCount = 30
-    territoryChain = [5, 3, 5, 7, 1, 1]
+    territoryChain = [12, 3, 1, 1, 1, 1]
     (territoryCapturedCount, attackerArmiesRemainingCount) = evalCaptureChain(attackerCount, territoryChain)
+
     print(
-        "Input: attackers", attackerCount,
+        "trials", trialCount,
+        "attackers", attackerCount,
         "defenders", territoryChain)
-    print(
-        "Result: captured territory count", territoryCapturedCount,
-        "attacker armies remaining", attackerArmiesRemainingCount)
+
+    results = trials.run(lambda: evalCaptureChain(attackerCount, territoryChain), trialCount)
+    trials.normalizeCounts(results, trialCount)
+    print(trials.formatToCSV(results))
