@@ -90,3 +90,7 @@ e-05,6e-05,1e-05,1e-05,1e-05,1e-05
 ### Probability to Capture a Territory
 
 Finding out the odds of an attacker succeeding or failing to capture a given territory is solveable as a subset of cost-to-capture, since the number of armies available to the attacker can be taken as a cut-line. Sum up the total distribution that is less than the number of armies availble to the attacker, and that is the probability of success.
+
+### Probability to Capture a Chain of Territories
+
+A common scenario in Risk-like games is that a player would like to capture a set of connected territories in some order. This adds a [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain) element to the problem. The setup here is that given an ordered list of territories with defending army counts for each, and given a starting count of attacking armies, how far down the list can the attacker get, and how many attacking armies are left over, if any?
