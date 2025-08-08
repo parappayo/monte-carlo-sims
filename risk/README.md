@@ -90,3 +90,25 @@ e-05,6e-05,1e-05,1e-05,1e-05,1e-05
 ### Probability to Capture a Territory
 
 Finding out the odds of an attacker succeeding or failing to capture a given territory is solveable as a subset of cost-to-capture, since the number of armies available to the attacker can be taken as a cut-line. Sum up the total distribution that is less than the number of armies availble to the attacker, and that is the probability of success.
+
+### Probability to Capture a Chain of Territories
+
+A common scenario in Risk-like games is that a player would like to capture a set of connected territories in some order. This adds a [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain) element to the problem. The setup here is that given an ordered list of territories with defending army counts for each, and given a starting count of attacking armies, how far down the list can the attacker get, and how many attacking armies are left over, if any?
+
+An important rule to account for is that the attacker must leave one army behind at each territory in the chain. In actual play the attacker may elect to leave behind as many armies as they choose, but for the purposes of deciding what the probable cost of conquering a chain of territories is, we can assume that the minimum mandatory one army is used.
+
+This sim makes a simplifying assumption (for now) that the attacker always has 3 armies to attack with. In reality, once the attacker is down to their last 2 armies, they attack with reduced strength, and an attacker with only 1 army cannot attack. This may get ironed out in a future version.
+
+Example output:
+
+```
+$ python cost_to_capture_chain.py
+trials 200000 attackers 30 defenders [12, 3, 1, 1, 1, 1]
+(0, 0),(1, 0),(2, 0),(3, 0),(4, 0),(5, 0),(6, 1),(6, 2),(6, 3),(6, 4),(6, 5),(6,
+ 6),(6, 7),(6, 8),(6, 9),(6, 10),(6, 11),(6, 12),(6, 13),(6, 14),(6, 15),(6, 16)
+,(6, 17),(6, 18),(6, 19),(6, 20),(6, 21),(6, 22),(6, 23),(6, 24)
+0.005065,0.016025,0.011995,0.017535,0.025575,0.03409,0.027235,0.032465,0.03744,0
+.04243,0.047555,0.053785,0.058255,0.062195,0.0646,0.066765,0.064865,0.062265,0.0
+5949,0.05208,0.045285,0.036855,0.028185,0.02025,0.013235,0.008215,0.00394,0.0016
+7,0.000555,0.0001
+```
