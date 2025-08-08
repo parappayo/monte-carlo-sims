@@ -3,7 +3,7 @@ import sys
 import trials
 
 
-def costToConquer(defenderCount):
+def costToCapture(defenderCount):
     cost = 0
     while defenderCount > 1:
         result = dice.roll3v2()
@@ -21,6 +21,6 @@ if __name__ == '__main__':
     defenderCount = int(sys.argv[1])
     bucketSize = 5
 
-    results = trials.run(lambda: costToConquer(defenderCount), trialCount, bucketSize)
+    results = trials.run(lambda: costToCapture(defenderCount), trialCount, bucketSize)
     trials.normalizeCounts(results, trialCount)
     print(trials.formatToCSV(results))

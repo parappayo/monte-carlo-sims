@@ -94,3 +94,5 @@ Finding out the odds of an attacker succeeding or failing to capture a given ter
 ### Probability to Capture a Chain of Territories
 
 A common scenario in Risk-like games is that a player would like to capture a set of connected territories in some order. This adds a [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain) element to the problem. The setup here is that given an ordered list of territories with defending army counts for each, and given a starting count of attacking armies, how far down the list can the attacker get, and how many attacking armies are left over, if any?
+
+This sim makes a simplifying assumption (for now) that the attacker always has 3 armies to attack with. In reality, once the attacker is down to their last 2 armies, they attack with reduced strength, and an attacker with only 1 army cannot attack. This may get ironed out in a future version.
